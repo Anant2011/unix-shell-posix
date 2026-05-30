@@ -1,0 +1,5 @@
+tsh
+tshref
+*.o
+*~
+.DS_Store
