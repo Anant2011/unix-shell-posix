@@ -1,7 +1,14 @@
-/* 
- * tsh - A tiny shell program with job control
- * 
- * <Put your name and login ID here>
+/*
+ * Unix Shell with Job Control
+ *
+ * Features:
+ * - Foreground/background execution
+ * - Job control (bg/fg)
+ * - Process groups
+ * - POSIX signal handling
+ * - Race-free synchronization
+ *
+ * Author: Anant Pratap Singh Chauhan
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -54,7 +61,7 @@ struct job_t jobs[MAXJOBS]; /* The job list */
 
 /* Function prototypes */
 
-/* Here are the functions that you will implement */
+
 void eval(char *cmdline);
 int builtin_cmd(char **argv);
 void do_bgfg(char **argv);
@@ -64,7 +71,6 @@ void sigchld_handler(int sig);
 void sigtstp_handler(int sig);
 void sigint_handler(int sig);
 
-/* Here are helper routines that we've provided for you */
 int parseline(const char *cmdline, char **argv); 
 void sigquit_handler(int sig);
 
